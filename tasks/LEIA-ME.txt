@@ -1,0 +1,1 @@
+Use `tasks/planejamento.xlsx` com colunas: Semana | Id Aluno | SQUAD | Tarefa

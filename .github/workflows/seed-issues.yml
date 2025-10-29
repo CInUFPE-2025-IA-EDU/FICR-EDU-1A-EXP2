@@ -1,0 +1,33 @@
+name: Seed Issues from Excel
+on:
+  workflow_dispatch:
+    inputs:
+      excel_path:
+        description: "Caminho do Excel (default: tasks/planejamento.xlsx)"
+        required: false
+        default: "tasks/planejamento.xlsx"
+      ia_default:
+        description: "Tag IA padrão (COMIA ou SEMIA) caso não venha na planilha"
+        required: false
+        default: "SEMIA"
+permissions:
+  contents: read
+  issues: write
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyGithub pandas openpyxl pyyaml
+      - name: Seed issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          python tools/seed_issues_from_excel.py             --repo "$REPO"             --token "$GH_TOKEN"             --excel "${{ github.event.inputs.excel_path }}"             --students "config/students.yaml"             --ia-default "${{ github.event.inputs.ia_default }}"

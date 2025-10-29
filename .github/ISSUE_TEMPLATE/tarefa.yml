@@ -1,0 +1,25 @@
+name: Tarefa (Aluno/SQUAD/Semana/IA)
+description: Tarefa criada a partir do Excel
+title: "[Semana ${semana}] ${tarefa} (${id_aluno} - Squad ${squad} - ${ia})"
+labels: ["tarefa", "Semana:${semana}", "SQUAD:${squad}", "IdAluno:${id_aluno}", "IA:${ia}"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Descrição:** ${descricao}
+
+        **Entregáveis:** ${entregaveis}
+
+        **Critérios de Aceite:** ${criterios}
+
+        **Arquivos Sugeridos:** ${arquivos}
+
+        **Comando de Verificação:** `${comando}`
+
+        **Branch Sugerida:** `${branch}`
+
+        **Título do PR:** ${titulo_pr}
+
+        **Revisor:** ${revisor}
+
+        **Observações:** ${observacoes}

@@ -1,0 +1,21 @@
+name: CI - Lint & HTML Validate
+on:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install deps
+        run: |
+          npm ci || npm i
+      - name: Prettier check
+        run: npx prettier --check "src/**/*.{js,css,html}"
+      - name: ESLint
+        run: npx eslint "src/**/*.js"
+      - name: HTML Validate
+        run: npx html-validate "src/**/*.html"
