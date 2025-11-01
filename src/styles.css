@@ -1,1 +1,9 @@
-body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:2rem} .container{max-width:720px;margin:auto}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 2rem;
+}
+.container {
+  max-width: 720px;
+  margin: auto;
+}
