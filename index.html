@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Starter - EXP2</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar__container">
+        <ul class="navbar__list">
+          <li class="navbar__item">
+            <a class="navbar__link navbar__link--active" href="#">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="#">Sobre</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="#">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="container">
+      <article class="signup-form signup-form--with-terms">
+        <header class="signup-form__header">
+          <h1 class="signup-form__title">Criar conta</h1>
+          <p class="signup-form__subtitle">Preencha seus dados para começar</p>
+        </header>
+        <form class="signup-form__body" action="#" method="post" novalidate>
+          <div class="signup-form__group">
+            <label class="signup-form__label" for="name">Nome completo</label>
+            <input
+              class="signup-form__input"
+              type="text"
+              id="name"
+              name="name"
+              required
+            />
+          </div>
+
+          <div class="signup-form__group">
+            <label class="signup-form__label" for="email">E-mail</label>
+            <input
+              class="signup-form__input"
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
+            <p class="signup-form__error signup-form__error--hidden">
+              Informe um e-mail válido
+            </p>
+          </div>
+
+          <div class="signup-form__group signup-form__group--with-icon">
+            <label class="signup-form__label" for="password">Senha</label>
+            <input
+              class="signup-form__input"
+              type="password"
+              id="password"
+              name="password"
+              minlength="8"
+              required
+            />
+            <button
+              class="signup-form__toggle-password"
+              type="button"
+              aria-label="Mostrar senha"
+            ></button>
+            <p class="signup-form__error signup-form__error--hidden">
+              A senha deve conter no mínimo 8 caracteres
+            </p>
+          </div>
+
+          <div class="signup-form__terms">
+            <input
+              class="signup-form__check-input"
+              type="checkbox"
+              id="terms"
+              name="terms"
+              required
+            />
+            <label class="signup-form__check-label" for="terms">
+              Eu li e aceito os
+              <a href="#" target="_blank" rel="noopener noreferrer"
+                >Termos de Uso</a
+              >
+              e a
+              <a href="#" target="_blank" rel="noopener noreferrer"
+                >Política de Privacidade</a
+              >.
+            </label>
+          </div>
+
+          <div class="signup-form__actions">
+            <button
+              class="button button--primary signup-form__submit"
+              type="submit"
+            >
+              Criar conta
+            </button>
+            <a class="signup-form__link" href="#">Já tenho conta</a>
+          </div>
+        </form>
+      </article>
+      <script type="module" src="./main.js"></script>
+    </main>
+  </body>
+</html>
